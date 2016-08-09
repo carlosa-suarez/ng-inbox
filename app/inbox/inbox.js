@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.inbox', ['ngRoute'])
+angular.module('inboxApp.inbox', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/inbox', {
