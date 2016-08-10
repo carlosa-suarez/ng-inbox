@@ -5,25 +5,24 @@ angular.module('inboxApp.inbox', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/inbox', {
     templateUrl: 'inbox/inbox.html',
-    controller: 'inboxCtrl'
+    controller: 'InboxCtrl',
+    controllerAs: 'vm'
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('InboxCtrl', inboxCtrl);
 
-}]);
-
-var inbox = {
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
-	issue: 'issue', body: 'body', date: '2016/04/23',
+function inboxCtrl () {
+	this.inboxMails = [
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'},
+		{issue: 'issue', body: 'body', date: '2016/04/23'}
+		
+	];	
 }

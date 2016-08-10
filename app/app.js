@@ -5,7 +5,8 @@ angular.module('inboxApp', [
   'ngRoute',
   'inboxApp.inbox',
   'inboxApp.sent',
-  'inboxApp.version'
+  'inboxApp.version',
+  'inboxApp.components'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
