@@ -10,19 +10,23 @@ angular.module('inboxApp.inbox', ['ngRoute'])
   });
 }])
 
-.controller('InboxCtrl', inboxCtrl);
+.controller('inboxCtrl', inboxCtrl);
 
-function inboxCtrl () {
-	this.inboxMails = [
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'},
-		{issue: 'issue', body: 'body', date: '2016/04/23'}
-		
-	];	
+function inboxCtrl ($http) {
+	var vm = this;
+
+	vm.inboxMails = {};
+
+	$http({
+  method: 'GET',
+  url: 'http://private-8c78d-inboxapi5.apiary-mock.com/inbox'
+}).then(function successCallback(response) {
+	if(!response) {
+		return;
+	}
+
+	vm.inboxMails = response.data;
+  }, function errorCallback(response) {
+    vm.error = response.error;
+  });
 }
