@@ -1,5 +1,10 @@
-<p>This is the partial for view 2.</p>
+<p>This is the partial for sent.</p>
+<ul>
+	<li ng-repeat="email in vm.sentMails">
+		<custom-email email='email'></custom-email>
+	</li>
+</ul>
 <p>
-  Showing of 'interpolate' filter:
+  Showing of 'interpolate' filter1:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p>

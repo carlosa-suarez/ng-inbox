@@ -5,13 +5,14 @@ angular.module('inboxApp.sent', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/sent', {
     templateUrl: 'sent/sent.html',
-    controller: 'sentCtrl'
+    controller: 'sentCtrl',
+    controllerAs: 'vm'
   });
 }])
 
 .controller('sentCtrl', sentCtrl);
 
-function sentCtrl (http) {
+function sentCtrl ($http) {
 	var vm = this;
 
 	vm.sentMails = {};

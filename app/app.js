@@ -5,6 +5,7 @@ angular.module('inboxApp', [
   'ngRoute',
   'inboxApp.inbox',
   'inboxApp.sent',
+  'inboxApp.compose',
   'inboxApp.version',
   'inboxApp.components'
 ]).
