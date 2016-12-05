@@ -9,10 +9,11 @@ angular.module('inboxApp.components.email')
     scope: {
     	email: '='
     },
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    bindToController: true
   };
 
   function emailController () {
-  	console.log("fdasss");
+  	var vm = this;
   }
 });
